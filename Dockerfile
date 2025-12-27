@@ -6,8 +6,7 @@ RUN comfy-node-install comfyui_essentials
 RUN comfy-node-install comfyui-kjnodes
 RUN comfy-node-install comfyui-ic-light
 RUN comfy-node-install comfyui_ipadapter_plus
-RUN comfy-node-install comfyui_essentials
-RUN comfy-node-install ComfyUI-Hangover-Nodes
+# RUN comfy-node-install ComfyUI-Hangover-Nodes
 
 # download models using comfy-cli
 # the "--filename" is what you use in your ComfyUI workflow
