@@ -2,7 +2,11 @@
 FROM runpod/worker-comfyui:5.1.0-base
 
 # install custom nodes using comfy-cli
-RUN comfy-node-install comfyui-kjnodes comfyui-ic-light comfyui_ipadapter_plus comfyui_essentials ComfyUI-Hangover-Nodes
+RUN comfy-node-install comfyui-kjnodes || echo "Warning: comfyui-kjnodes install failed"
+RUN comfy-node-install comfyui-ic-light || echo "Warning: comfyui-ic-light install failed"
+RUN comfy-node-install comfyui_ipadapter_plus || echo "Warning: comfyui_ipadapter_plus install failed"
+RUN comfy-node-install comfyui_essentials || echo "Warning: comfyui_essentials install failed"
+RUN comfy-node-install ComfyUI-Hangover-Nodes || echo "Warning: ComfyUI-Hangover-Nodes install failed"
 
 # download models using comfy-cli
 # the "--filename" is what you use in your ComfyUI workflow
