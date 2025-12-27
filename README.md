@@ -9,13 +9,7 @@ Dockerized ComfyUI workflow: Juggernaut XL Lightning Workflow.json
 
 ## Usage
 
-```bash
-# Build the Docker image
-docker build -t juggernaut-xl-lightning-workflow .
-
-# Run the container
-docker run -p 8188:8188 juggernaut-xl-lightning-workflow
-```
+Deployed with runpod serverless
 
 ## API Request Example
 
