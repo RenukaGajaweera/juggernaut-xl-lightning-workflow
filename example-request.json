@@ -1,0 +1,562 @@
+{
+  "input": {
+    "workflow": {
+      "1": {
+        "inputs": {
+          "ckpt_name": "xl\\juggernautXL_v9Rdphoto2Lightning.safetensors"
+        },
+        "class_type": "CheckpointLoaderSimple",
+        "_meta": {
+          "title": "CheckpointLoaderSimple"
+        }
+      },
+      "2": {
+        "inputs": {
+          "text": "aqua short hair, blue eyes, futuristc technology armor, red and silver neon lights gold trim, \nphoto background, ",
+          "clip": [
+            "36",
+            1
+          ]
+        },
+        "class_type": "CLIPTextEncode",
+        "_meta": {
+          "title": "CLIPTextEncode"
+        }
+      },
+      "3": {
+        "inputs": {
+          "text": "blurry, night, dark, \nbig head, chibi, colored sclera, \n(open mouth:1.1), ",
+          "clip": [
+            "36",
+            1
+          ]
+        },
+        "class_type": "CLIPTextEncode",
+        "_meta": {
+          "title": "CLIPTextEncode"
+        }
+      },
+      "4": {
+        "inputs": {
+          "value": 0,
+          "model": [
+            "45",
+            1
+          ],
+          "positive": [
+            "2",
+            0
+          ],
+          "negative": [
+            "3",
+            0
+          ],
+          "latent_image": [
+            "5",
+            4
+          ],
+          "optional_vae": [
+            "45",
+            3
+          ],
+          "seed": [
+            "13",
+            0
+          ]
+        },
+        "class_type": "KSampler (Efficient)",
+        "_meta": {
+          "title": "KSampler (Efficient)"
+        }
+      },
+      "5": {
+        "inputs": {
+          "value": 720
+        },
+        "class_type": "CR SDXL Aspect Ratio",
+        "_meta": {
+          "title": "CR SDXL Aspect Ratio"
+        }
+      },
+      "7": {
+        "inputs": {
+          "bus": [
+            "45",
+            0
+          ],
+          "positive": [
+            "4",
+            1
+          ],
+          "negative": [
+            "4",
+            2
+          ]
+        },
+        "class_type": "Bus Node",
+        "_meta": {
+          "title": "Bus Node"
+        }
+      },
+      "8": {
+        "inputs": {},
+        "class_type": "Reroute",
+        "_meta": {
+          "title": "Reroute"
+        }
+      },
+      "9": {
+        "inputs": {},
+        "class_type": "Reroute",
+        "_meta": {
+          "title": "Reroute"
+        }
+      },
+      "11": {
+        "inputs": {
+          "value": 153527051626593
+        },
+        "class_type": "Seed (rgthree)",
+        "_meta": {
+          "title": "Seed (rgthree)"
+        }
+      },
+      "12": {
+        "inputs": {},
+        "class_type": "Reroute",
+        "_meta": {
+          "title": "Reroute"
+        }
+      },
+      "13": {
+        "inputs": {},
+        "class_type": "Reroute",
+        "_meta": {
+          "title": "Reroute"
+        }
+      },
+      "15": {
+        "inputs": {
+          "value": 1.5,
+          "image": [
+            "41",
+            0
+          ],
+          "model": [
+            "39",
+            1
+          ],
+          "positive": [
+            "39",
+            4
+          ],
+          "negative": [
+            "39",
+            5
+          ],
+          "vae": [
+            "39",
+            3
+          ],
+          "upscale_model": [
+            "18",
+            0
+          ],
+          "seed": [
+            "19",
+            0
+          ]
+        },
+        "class_type": "UltimateSDUpscale",
+        "_meta": {
+          "title": "UltimateSDUpscale"
+        }
+      },
+      "17": {
+        "inputs": {
+          "text": "[time(%Y-%m-%d)]_Lightning\\",
+          "images": [
+            "48",
+            0
+          ]
+        },
+        "class_type": "Image Save",
+        "_meta": {
+          "title": "Image Save"
+        }
+      },
+      "18": {
+        "inputs": {
+          "model_name": "4x_NMKD-Siax_200k.pth"
+        },
+        "class_type": "UpscaleModelLoader",
+        "_meta": {
+          "title": "UpscaleModelLoader"
+        }
+      },
+      "19": {
+        "inputs": {},
+        "class_type": "Reroute",
+        "_meta": {
+          "title": "Reroute"
+        }
+      },
+      "20": {
+        "inputs": {
+          "images": [
+            "15",
+            0
+          ]
+        },
+        "class_type": "PreviewImage",
+        "_meta": {
+          "title": "PreviewImage"
+        }
+      },
+      "21": {
+        "inputs": {
+          "value": 768,
+          "image": [
+            "43",
+            0
+          ],
+          "detailer_pipe": [
+            "22",
+            0
+          ],
+          "seed": [
+            "29",
+            0
+          ]
+        },
+        "class_type": "FaceDetailerPipe",
+        "_meta": {
+          "title": "FaceDetailerPipe"
+        }
+      },
+      "22": {
+        "inputs": {
+          "text": "",
+          "model": [
+            "51",
+            1
+          ],
+          "clip": [
+            "51",
+            2
+          ],
+          "vae": [
+            "51",
+            3
+          ],
+          "positive": [
+            "24",
+            0
+          ],
+          "negative": [
+            "25",
+            0
+          ],
+          "bbox_detector": [
+            "58",
+            0
+          ],
+          "sam_model_opt": [
+            "28",
+            0
+          ],
+          "segm_detector_opt": [
+            "58",
+            1
+          ]
+        },
+        "class_type": "ToDetailerPipe",
+        "_meta": {
+          "title": "ToDetailerPipe"
+        }
+      },
+      "23": {
+        "inputs": {
+          "bus": [
+            "39",
+            0
+          ]
+        },
+        "class_type": "Bus Node",
+        "_meta": {
+          "title": "Bus Node"
+        }
+      },
+      "24": {
+        "inputs": {
+          "text": "blue eyes, long eyelashes, ",
+          "clip": [
+            "23",
+            2
+          ]
+        },
+        "class_type": "CLIPTextEncode",
+        "_meta": {
+          "title": "CLIPTextEncode"
+        }
+      },
+      "25": {
+        "inputs": {
+          "text": "colored sclera, \ndeformed, blurry, glitter, ",
+          "clip": [
+            "23",
+            2
+          ]
+        },
+        "class_type": "CLIPTextEncode",
+        "_meta": {
+          "title": "CLIPTextEncode"
+        }
+      },
+      "26": {
+        "inputs": {
+          "filename": "bbox/Eyeful_v1.pt"
+        },
+        "class_type": "UltralyticsDetectorProvider",
+        "_meta": {
+          "title": "UltralyticsDetectorProvider"
+        }
+      },
+      "28": {
+        "inputs": {
+          "filename": "sam_vit_b_01ec64.pth"
+        },
+        "class_type": "SAMLoader",
+        "_meta": {
+          "title": "SAMLoader"
+        }
+      },
+      "29": {
+        "inputs": {
+          "value": 112400826379072
+        },
+        "class_type": "Seed (rgthree)",
+        "_meta": {
+          "title": "Seed (rgthree)"
+        }
+      },
+      "30": {
+        "inputs": {
+          "images": [
+            "21",
+            0
+          ]
+        },
+        "class_type": "PreviewImage",
+        "_meta": {
+          "title": "PreviewImage"
+        }
+      },
+      "31": {
+        "inputs": {
+          "images": [
+            "21",
+            2
+          ]
+        },
+        "class_type": "PreviewImage",
+        "_meta": {
+          "title": "PreviewImage"
+        }
+      },
+      "35": {
+        "inputs": {
+          "text": "simple"
+        },
+        "class_type": "LoRA Stacker",
+        "_meta": {
+          "title": "LoRA Stacker"
+        }
+      },
+      "36": {
+        "inputs": {
+          "model": [
+            "1",
+            0
+          ],
+          "clip": [
+            "1",
+            1
+          ],
+          "lora_stack": [
+            "35",
+            0
+          ]
+        },
+        "class_type": "CR Apply LoRA Stack",
+        "_meta": {
+          "title": "CR Apply LoRA Stack"
+        }
+      },
+      "37": {
+        "inputs": {},
+        "class_type": "Reroute",
+        "_meta": {
+          "title": "Reroute"
+        }
+      },
+      "39": {
+        "inputs": {
+          "bus": [
+            "7",
+            0
+          ]
+        },
+        "class_type": "Bus Node",
+        "_meta": {
+          "title": "Bus Node"
+        }
+      },
+      "40": {
+        "inputs": {},
+        "class_type": "Reroute",
+        "_meta": {
+          "title": "Reroute"
+        }
+      },
+      "41": {
+        "inputs": {},
+        "class_type": "Reroute",
+        "_meta": {
+          "title": "Reroute"
+        }
+      },
+      "42": {
+        "inputs": {},
+        "class_type": "Reroute",
+        "_meta": {
+          "title": "Reroute"
+        }
+      },
+      "43": {
+        "inputs": {},
+        "class_type": "Reroute",
+        "_meta": {
+          "title": "Reroute"
+        }
+      },
+      "44": {
+        "inputs": {
+          "model": [
+            "37",
+            0
+          ],
+          "clip": [
+            "8",
+            0
+          ],
+          "vae": [
+            "9",
+            0
+          ]
+        },
+        "class_type": "Bus Node",
+        "_meta": {
+          "title": "Bus Node"
+        }
+      },
+      "45": {
+        "inputs": {
+          "bus": [
+            "44",
+            0
+          ]
+        },
+        "class_type": "Bus Node",
+        "_meta": {
+          "title": "Bus Node"
+        }
+      },
+      "46": {
+        "inputs": {
+          "text": "[time(%Y-%m-%d)]_Lightning\\Upscale",
+          "images": [
+            "47",
+            0
+          ]
+        },
+        "class_type": "Image Save",
+        "_meta": {
+          "title": "Image Save"
+        }
+      },
+      "47": {
+        "inputs": {
+          "value": 1,
+          "image": [
+            "21",
+            0
+          ]
+        },
+        "class_type": "ImageSharpen",
+        "_meta": {
+          "title": "ImageSharpen"
+        }
+      },
+      "48": {
+        "inputs": {
+          "value": 1,
+          "image": [
+            "4",
+            5
+          ]
+        },
+        "class_type": "ImageSharpen",
+        "_meta": {
+          "title": "ImageSharpen"
+        }
+      },
+      "50": {
+        "inputs": {
+          "value": 10
+        },
+        "class_type": "MediaPipeFaceMeshDetectorProvider //Inspire",
+        "_meta": {
+          "title": "MediaPipeFaceMeshDetectorProvider //Inspire"
+        }
+      },
+      "51": {
+        "inputs": {
+          "bus": [
+            "23",
+            0
+          ]
+        },
+        "class_type": "Bus Node",
+        "_meta": {
+          "title": "Bus Node"
+        }
+      },
+      "58": {
+        "inputs": {
+          "value": true,
+          "bbox1": [
+            "50",
+            0
+          ],
+          "bbox2": [
+            "26",
+            0
+          ],
+          "segm1": [
+            "50",
+            1
+          ],
+          "segm2": [
+            "26",
+            1
+          ]
+        },
+        "class_type": "workflow/Switch Detector",
+        "_meta": {
+          "title": "workflow/Switch Detector"
+        }
+      }
+    }
+  }
+}
